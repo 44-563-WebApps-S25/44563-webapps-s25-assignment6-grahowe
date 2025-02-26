@@ -23,6 +23,18 @@
 
 <p id="dinnerResult">Your dinner choices will appear here</p>
 
+<form>
+    <label for="mainDish">Enter main dish: </label>
+    <input type="text" id="mainDish" value="Butter Chicken"><br><br>
+
+    <label for="dessert">Enter dessert: </label>
+    <input type="text" id="dessert"><br><br>
+
+    <button type="button" onclick="updateDinner()">Update the Dinner</button>
+</form>
+
+<p id="updatedDinner">Your updated dinner choices will appear here</p>
+
 <script> 
 
 let my_dinner = {};
@@ -34,7 +46,17 @@ function choices(){
     my_dinner.outside = document.getElementById("outside").checked;
     my_dinner.candles = document.getElementById("candles").checked;
 
-    document.getElementById("dinnerResult").innerText = "Dinner choices: Wine - " + my_dinner.wine + ", Outside seating - " + my_dinner.outside + ", Candles - " + my_dinner.candles;
+    document.getElementById("dinnerResult").innerText = "Dinner choices: Wine - " + my_dinner.wine + ", Outside Seating - " + my_dinner.outside + ", Candles - " + my_dinner.candles;
+}
+
+function updateDinner(){
+    let mainDish = document.getElementById("mainDish").value;
+    let dessert = document.getElementById("dessert").value;
+
+    my_dinner.main = mainDish;
+    my_dinner.dessert = dessert;
+
+    document.getElementById("updatedDinner").innerText = "Updated Dinner: Main Dish - " + my_dinner.main + ", Dessert - " + my_dinner.dessert + ", Wine - " + my_dinner.wine + ", Outside Seating - " + my_dinner.outside + ", Candles - " + my_dinner.candles;
 }
 
 </script>
