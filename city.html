@@ -25,6 +25,8 @@
 let oops = 0;
 let found = 0;
 
+let usePic = 1;
+
 function checkCity(){
     let secret = document.getElementById("secretCity").value;
     let guess = document.getElementById("guessCity").value;
@@ -41,7 +43,30 @@ function checkCity(){
     document.getElementById("resultDisplay").innerHTML = `Correct: ${found} | Incorrect: ${oops}`;
 }
 
+function updatePic(){
+    let imgElement = document.getElementById("petImage");
+
+    switch (usePic) {
+        case 1:
+            imgElement.src = "hamster.jpg";
+            usePic = 2;
+            break;
+        case 2:
+            imgElement.src = "rabbit.jpg";
+            usePic = 3;
+            break;
+        case 3:
+            imgElement.src = "goat.jpg";
+            usePic = 1;
+            break;
+    }
+}
+
 </script>
+
+<div>
+    <img id="petImage" src="goat.jpg" width="150" height="150" onclick="updatePic()">
+</div>
 
 </body>
 </html> 
