@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<title>Plan Dinner</title>
+ 
+<body>
+
+<h2>Owen Graham - Plans Dinner</h2>
+
+<form>
+    <label for="wine">Serve wine: </label>
+    <input type="checkbox" id="wine" value="True"><br><br>
+
+    <label for="outside">Eat outside: </label>
+    <input type="checkbox" id="outside" value="True"><br><br>
+
+    <label for="candles">Light candles: </label>
+    <input type="checkbox" id="candles" value="False"><br><br>
+
+    <button type="button" onclick="choices()">Dinner Choices</button>
+</form>
+
+
+<p id="dinnerResult">Your dinner choices will appear here</p>
+
+<script> 
+
+let my_dinner = {};
+
+function choices(){
+    my_dinner = {};
+
+    my_dinner.wine = document.getElementById("wine").checked;
+    my_dinner.outside = document.getElementById("outside").checked;
+    my_dinner.candles = document.getElementById("candles").checked;
+
+    document.getElementById("dinnerResult").innerText = "Dinner choices: Wine - " + my_dinner.wine + ", Outside seating - " + my_dinner.outside + ", Candles - " + my_dinner.candles;
+}
+
+</script>
+
+</body>
+</html> 
